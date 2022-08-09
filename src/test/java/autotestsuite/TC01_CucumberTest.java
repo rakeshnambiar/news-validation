@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(tags = "@TC01_Regression",
+@CucumberOptions(tags = "@Regression",
         plugin = {"pretty"},
         features = "src/test/resources/features"
 )

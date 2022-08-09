@@ -2,7 +2,7 @@ Feature: Validate and prevent the fake news
   As a user of Guardian news
   I wanted to make sure the news I am reading is valid
 
-  @TC01_Regression
+  @Regression
   Scenario: Verify the authenticity of one of the top three news article by querying various ways
     Given Mike is navigated to the Guardian news home page
     When he selected the one of the top 3 articles
@@ -11,7 +11,7 @@ Feature: Validate and prevent the fake news
     And with some formatting he tried some searches on google website
     Then he should see similar news reported from at least 2 others sources on the Google search results
 
-  @TC02_Regression
+  @Sanity
   Scenario: Verify the authenticity of the very first article with exact search
     Given Mike is navigated to the Guardian news home page
     When he selected the one of the top 20 articles
