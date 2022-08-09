@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(
+@CucumberOptions(tags = "@Batch1",
         plugin = {"pretty"},
         features = "src/test/resources/features"
 )

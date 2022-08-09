@@ -9,6 +9,7 @@ The latest version of Serenity supports Cucumber 6.x.
 ## How to run the tests
 
 use the command `mvn clean verify -P cucumber-tests -Dtags=Regression`
+to execute the tests in parallel, please use the command `mvn clean verify -P cucumber-tests -Dtags=Regression -Dthreadcount=2`
 
 ## More about the framework
 
