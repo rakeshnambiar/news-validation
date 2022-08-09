@@ -19,7 +19,7 @@ Visit the site https://serenity-bdd.info/ for more info
 
 - Run the command `docker-compose up -d` from the root folder of the project
 - Disable the `local webdriver` settings in the `serenity.conf` file
-- Alternatively you can also run it through the command line like: `mvn clean verify -P cucumber-tests -Dtags=Regression -Dwebdriver.remote.url=http://<host-ip-address>:4444/wd/hub -Dwebdriver.remote.driver=chrome -Dwebdriver.remote.os=Linux`
+- Alternatively you can also run it through the command line like: `mvn clean verify -P cucumber-tests -Dwebdriver.remote.url=http://<host-ip-address>:4444/wd/hub -Dwebdriver.remote.driver=chrome -Dwebdriver.remote.os=Linux`
 
 ## Execution on BrowserStack
 - Enable the `browser stack webdriver settings` settings in the `serenity.conf` file
