@@ -15,10 +15,10 @@ stages:
 run_browser_tests:
     stage: ui_test
     script:
-      - 'mvn clean verify -P cucumber-tests -Dmaven.test.skip=false'
+      - 'mvn clean verify -P cucumber-tests -Dtags=Regression -Dwebdriver.remote.url=http://ec2-3-110-186-122.ap-south-1.compute.amazonaws.com:4444/wd/hub -Dwebdriver.remote.driver=chrome -Dwebdriver.remote.os=Linux'
     artifacts:
       paths:
-        - script/target
+        - target
       when: always 
   
 pages:
@@ -27,7 +27,7 @@ pages:
      - run_browser_tests
    script:
     - mkdir public
-    - mv script/target/* public
+    - mv target/* public
    artifacts:
      paths:
       - public   
