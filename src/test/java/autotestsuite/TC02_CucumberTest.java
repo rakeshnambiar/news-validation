@@ -4,7 +4,7 @@ import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.experimental.categories.Category;
 import org.junit.runner.RunWith;
-import tags.Batch2;
+import autotestsuite.tags.Batch2;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(

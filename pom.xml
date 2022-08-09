@@ -126,7 +126,7 @@
                             <useUnlimitedThreads>false</useUnlimitedThreads>
                             <forkMode>perthread</forkMode>
                             <threadCount>${threadcount}</threadCount>
-                            <groups>tags.${tags}</groups>
+                            <groups>autotestsuite.tags.${tags}</groups>
                         </configuration>
                         <executions>
                             <execution>

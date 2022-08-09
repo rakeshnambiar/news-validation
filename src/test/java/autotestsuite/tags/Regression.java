@@ -1,4 +1,4 @@
-package tags;
+package autotestsuite.tags;
 
 public @interface Regression {
 }

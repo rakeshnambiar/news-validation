@@ -1,6 +1,6 @@
 package autotestsuite;
 
-import tags.Regression;
+import autotestsuite.tags.Regression;
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.experimental.categories.Category;
