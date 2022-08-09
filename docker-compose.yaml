@@ -5,8 +5,6 @@ version: '2.1'
 
 services:
   #--------------#
-  selenium:
-   image: elgalu/selenium
   zalenium:
     image: dosel/zalenium
     container_name: zalenium
@@ -15,7 +13,7 @@ services:
     volumes:
       - /tmp/videos:/home/seluser/videos
       - /var/run/docker.sock:/var/run/docker.sock
-      #- /usr/bin/docker:/usr/bin/docker
+      - /usr/bin/docker:/usr/bin/docker
     ports:
       - 4444:4444
     command: >
@@ -45,8 +43,8 @@ services:
       - LT_ACCESS_KEY
       - SEL_RELEASE_TIMEOUT_SECS=720
       - ZALENIUM_EXTRA_JVM_PARAMS=-Dwebdriver.http.factory=apache
-      #- PULL_SELENIUM_IMAGE=true
-      #- ZALENIUM_PROXY_CLEANUP_TIMEOUT=1800
+      - PULL_SELENIUM_IMAGE=true
+      - ZALENIUM_PROXY_CLEANUP_TIMEOUT=1800
 
   mock:
     image: elgalu/google_adwords_mock
