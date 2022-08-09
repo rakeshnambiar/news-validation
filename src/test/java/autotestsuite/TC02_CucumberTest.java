@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 import autotestsuite.tags.Batch2;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(tags = "@Batch2",
+@CucumberOptions(tags = "@TC02_Regression",
         plugin = {"pretty"},
         features = "src/test/resources/features"
 )
