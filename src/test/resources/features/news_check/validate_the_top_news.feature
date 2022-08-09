@@ -12,7 +12,7 @@ Feature: Validate and prevent the fake news
     Then he should see similar news reported from at least 2 others sources on the Google search results
 
   @Sanity
-  Scenario: Verify the authenticity of the very first article with exact search
+  Scenario: Verify the authenticity of one of the article with exact search
     Given Mike is navigated to the Guardian news home page
     When he selected the one of the top 20 articles
     And he noted down news headlines of the selected item
