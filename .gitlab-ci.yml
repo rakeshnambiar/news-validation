@@ -15,7 +15,6 @@ stages:
 run_browser_tests:
     stage: ui_test
     script:
-      - 'cd script'
       - 'mvn clean verify -P cucumber-tests -Dmaven.test.skip=false'
     artifacts:
       paths:
