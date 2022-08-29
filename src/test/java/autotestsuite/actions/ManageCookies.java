@@ -41,7 +41,7 @@ public class ManageCookies {
         }
     }
 
-    public static Performable acceptGooglePolicyBy() throws Exception {
+    public static Performable acceptGooglePolicy() throws Exception {
         try {
             return Task.where("Accepts the Cookies",
                     Click.on(GoogleHomePage.privacyAcceptButton).afterWaitingUntilPresent());

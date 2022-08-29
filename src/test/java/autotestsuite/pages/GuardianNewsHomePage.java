@@ -14,7 +14,7 @@ public class GuardianNewsHomePage extends PageObject {
     @FindBy(css = "a.u-faux-block-link__overlay.js-headline-text")
     List<WebElement> news_headings;
     public static final Target COOKIE_YES = Target.the("Cookies Yes, I am happy").locatedBy("button[title^='Yes']");
-
+    public static final Target NEWS_TITLES = Target.the("News titles").locatedBy("body a.u-faux-block-link__overlay.js-headline-text");
     public int getHeadlinesCount() throws Exception{
         return news_headings.size();
     }

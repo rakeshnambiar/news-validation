@@ -1,5 +1,6 @@
 package autotestsuite.stepdefinitions;
 
+import autotestsuite.actions.News;
 import autotestsuite.actions.PerformOnGoogle;
 import autotestsuite.actions.ManageCookies;
 import autotestsuite.actions.NavigateTo;
@@ -25,6 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class ValidateNewsStepDefinitions {
@@ -50,14 +52,15 @@ public class ValidateNewsStepDefinitions {
     @When("{actor} selected the one of the top {int} articles")
     public void goToTheLatestNews(Actor actor, int limit) throws Exception {
         logger.info("Going to verify the news headings are displayed or not");
-        assertThat(guardianNewsHomePage.getHeadlinesCount()).isGreaterThan(0);
+        int titles_count = actor.asksFor(News.count());
+        assertThat(titles_count).isGreaterThan(0);
         logger.info("Clicking on the very first news headline");
         Random rand = new Random();
         int index = rand.nextInt(limit);
         if(index > 0){
             index -= 1;
         }
-        guardianNewsHomePage.clickOnNewHeading(index);
+        actor.attemptsTo(News.selectNewsTitle(index));
         logger.info("Closing ad banner in the page footer if exists");
         ManageCookies.closeBanner();
     }
@@ -78,7 +81,7 @@ public class ValidateNewsStepDefinitions {
                 WebElementQuestion.the(GoogleHomePage.privacyAcceptButton) , WebElementStateMatchers.isEnabled()
         ).forNoMoreThan(30).seconds());
         logger.info("Accepting google privacy policy");
-        actor.wasAbleTo(ManageCookies.acceptGooglePolicyBy());
+        actor.wasAbleTo(ManageCookies.acceptGooglePolicy());
     }
 
     @And("with some formatting {actor} tried some searches on google website")
